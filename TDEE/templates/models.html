@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TLine-Models</title>
+    <link rel ="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static',filename='js/models.js') }}"></script>
+  </head>
+  <body>
+    {% extends "root.html" %}    
+    {% block content %}
+    <div class="head">
+      <div class="headbutton" onclick="javascript:history.back();"> < BACK  </div>
+      <div class="headbutton" onclick="shortline()">SHORT</div>
+      <div class="headbutton" onclick="mediumline()">MEDIUM</div>
+      <div class="headbutton" onclick="longline()">LONG</div>
+      <div class="headbutton_inv"></div>
+     <div class="head_main">TRANSMISSION LINE MODELS</div>
+    </div>
+    <div style="width: 100% ;height: 40px;"></div>
+    <div style="display: flex; justify-content: center;"></div>
+    <div class="card_bar" style="background-color: #446879; display: inline-block; width: 33%;">
+      <div class="card_text">
+        <br>
+        <h1>SHORT LINE </h1>
+      <br>
+      <p>LENGTH LESS THAN 80 KM</p>
+      <br>
+      <button class="card_button" onclick="shortline()">Try It</button>
+      </div>
+    </div>
+    <div class="card_bar" style="background-color: #557a95; display: inline-block; width: 33%;">
+      <div class="card_text">
+        <br>
+        <h1>MEDIUM LINE </h1>
+      <br>
+      <p>LENGTH LESS THAN 250 KM</p>
+      <br>
+      <button class="card_button" onclick="mediumline()">Try It</button>
+      </div>
+    </div>
+    <div class="card_bar" style="background-color: #7395ae; display: inline-block; width: 33%;">
+      <div class="card_text">
+        <br>
+        <h1>LONG LINE</h1>
+      <br>
+      <p>LENGTH MORE THAN 250 KM</p>
+      <br>
+      <button class="card_button" onclick="longline()">Try It</button>
+      </div>
+    </div>
+    {% endblock %}
+    
+  </body>
+</html>

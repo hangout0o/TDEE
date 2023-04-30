@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <link rel ="stylesheet" type="text/css" href="{{ url_for('static',filename='css/pdf.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='js/result.js') }}"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body >
+
+    <div style="height: 20px;"></div>
+    <div class="result"><h1>RESULTS</h1></div>
+    <div class="name">
+    <p>EZHILMARAN - 107121029, HARSHUL - 107121043 and ASSLAM - 107121059</p>  
+    </div>  
+    <table >
+            <tr>
+                <th><div>PARAMETERS</div></th>
+                <th><div>VALUES</div></th>
+            </tr>
+            {% for key,value in output.items() %}
+            {% if key != 'bool' and key != 'model'%}
+            <tr>
+                <td><div>{{key}}</div></td>
+                <td><div>{{value}}</div></td>
+            </tr>
+            {% endif %}
+            {% endfor %}   
+        </table>
+  </body>
+</html>
